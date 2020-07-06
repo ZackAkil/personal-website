@@ -6,7 +6,7 @@
     <meta name="author" content="Zack Akil">
     <meta name="keywords"
         content="zack akil data science machine learning ml maker hacker hardware engineer machine learning">
-    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
         integrity="sha256-ECB9bbROLGm8wOoEbHcHRxlHgzGqYpDtNTgDTyDz0wg=" crossorigin="anonymous" />
     <!--<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">-->
@@ -141,7 +141,7 @@
         const INPUT_SHAPE = [150, 60]
         // const model = tf.loadLayersModel('model.json');
         var model;
-        tf.loadLayersModel('model.json').then((models) => {
+        tf.loadLayersModel('/model.json').then((models) => {
             model = models
             console.log("loaded model, yes I'm using machine learning model to draw the title (if it works 🤷‍♂️).")
 
