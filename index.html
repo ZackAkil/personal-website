@@ -1,0 +1,287 @@
+<html>
+
+<head>
+    <title>Zack Akil | Personal Website</title>
+    <meta name="description" content="London based machine learning maker.">
+    <meta name="author" content="Zack Akil">
+    <meta name="keywords"
+        content="zack akil data science machine learning ml maker hacker hardware engineer machine learning">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
+        integrity="sha256-ECB9bbROLGm8wOoEbHcHRxlHgzGqYpDtNTgDTyDz0wg=" crossorigin="anonymous" />
+    <!--<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
+
+    <script src="https://use.fontawesome.com/690665f777.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+
+    <style>
+        body {
+             font-family: 'Neucha', cursive;
+            /*font-family: 'Kalam', cursive;*/
+            /*font-family: 'Nunito Sans', sans-serif;*/
+            text-align: center
+        }
+
+        #me-json {
+            /* margin-top: 3em; */
+            font-size: 2em;
+        }
+
+        #social-links a {
+
+        color: rgba(48, 58, 165, 0.85);
+        display: inline-block;
+        /* padding: 3px; */
+        margin: 5px;
+        font-size: 1.4em;
+        }
+
+        #social-links a:hover {
+            text-decoration: none;
+            color: rgba(48, 58, 165, 1);
+        }
+
+        #social-links a:visited {
+            text-decoration: none;
+        }
+
+
+        /* unvisited link */
+        #social-links a:link {
+            text-decoration: none;
+        }
+
+
+        /* selected link */
+        #social-links a:active {
+            text-decoration: none;
+        }
+
+
+        @media (min-width: 992px) {
+            .container-small {
+                width: 800px;
+            }
+        }
+
+        .container-small {
+            max-width: 100%;
+        }
+
+        canvas {
+            image-rendering: optimizeSpeed;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: -o-crisp-edges;
+            image-rendering: pixelated;
+            -ms-interpolation-mode: nearest-neighbor;
+            width: 100%;
+            -webkit-transition: width 2s;
+            /* Safari prior 6.1 */
+            transition: opacity 3s;
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container  container-small">
+
+        <div id="me-json">
+            <div>
+                <a href="https://github.com/ZackAkil/webpage-autoencoder" target="_blank">
+                <canvas id="canvas" width="290" height="110"></canvas>
+                </a>
+                <!-- <h1 style="font-size: 2em">Zack Akil:</h1> -->
+            </div>
+            <!-- <hr> -->
+            <p style="font-size: 1.2em; color: #545454;" class="lead">machine learning maker</p>
+            <hr style="width:60%">
+            <div id="social-links">
+
+                <a id="github" target="_blank" href="https://github.com/ZackAkil">
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                </a>
+                <a id="twitter" target="_blank" href="https://twitter.com/ZackAkil">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a id="linkedin" target="_blank" href="https://www.linkedin.com/in/zackakil/">
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+
+                <a id="meetup" target="_blank" href="https://www.meetup.com/central_london_data_science/">
+                    <i class="fa fa-meetup" aria-hidden="true"></i>
+                </a>
+
+                <a id="medium" target="_blank" href="https://medium.com/@zackakil">
+                    <i class="fa fa-medium" aria-hidden="true" style="font-size: .9em;"></i>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-57583342-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+    <script>
+        // const INPUT_SHAPE = [250, 100]
+        const INPUT_SHAPE = [150, 60]
+        // const model = tf.loadLayersModel('model.json');
+        var model;
+        tf.loadLayersModel('model.json').then((models) => {
+            model = models
+            console.log("loaded model, yes I'm using machine learning model to draw the title (if it works 🤷‍♂️).")
+
+
+            // if (callbackOnLoad) {
+            //     callbackOnLoad()
+            // }
+        });
+
+        function predict(x, y) {
+            // console.log()
+            if (model)
+            draw(model.predict(tf.tensor2d([[x, y]])).dataSync())
+        }
+
+
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+        ctx.scale(2, 2);
+
+
+        function draw(image_data) {
+            var imageData = ctx.createImageData(INPUT_SHAPE[0], INPUT_SHAPE[1]);
+            for (var i = 0; i < imageData.data.length; i += 4) {
+                // const col = image_data[i / 4] * 255
+                // imageData.data[i] = col;     // red
+                // imageData.data[i + 1] = col; // green
+                // imageData.data[i + 2] = col; // blue
+                // imageData.data[i + 3] = 255;
+
+                // var col = 0
+                if (image_data[i / 4] < 0.5) {
+                    // col = 255
+                    imageData.data[i] = 48;     // red
+                    imageData.data[i + 1] = 58; // green
+                    imageData.data[i + 2] = 165; // blue
+                    imageData.data[i + 3] = 255;
+                } else {
+                    imageData.data[i] = 255;     // red
+                    imageData.data[i + 1] = 255; // green
+                    imageData.data[i + 2] = 255; // blue
+                    imageData.data[i + 3] = 255;
+                }
+                // imageData.data[i] = col;     // red
+                // imageData.data[i + 1] = col; // green
+                // imageData.data[i + 2] = col; // blue
+                // imageData.data[i + 3] = 255;
+            }
+
+
+            ctx.putImageData(imageData, 0, 0);
+            ctx.drawImage(ctx.canvas, 0, 0);
+
+        }
+
+        function get_width() {
+            return Math.max(
+                document.body.scrollWidth,
+                document.body.offsetWidth,
+                document.documentElement.scrollWidth,
+                document.documentElement.offsetWidth,
+                document.documentElement.clientWidth
+            );
+        }
+
+        function get_height() {
+            return Math.max(
+                document.body.scrollHeight,
+                document.body.offsetHeight,
+                document.documentElement.scrollHeight,
+                document.documentElement.offsetHeight,
+                document.documentElement.clientHeight
+            );
+        }
+
+
+        var mouse_x = 0
+        var mouse_y = 0
+
+        var target_mouse_x = 0
+        var target_mouse_y = 0
+
+
+        document.addEventListener("mousemove", function (e) {
+            var event = e || window.event;
+            target_mouse_x = event.pageX;
+            target_mouse_y = event.pageY;
+        });
+
+        setInterval(function () {
+            mouse_x += (target_mouse_x-mouse_x)/7
+            mouse_y += (target_mouse_y-mouse_y)/7
+
+        }, 1000 / 30);
+
+
+        var y_noise = 0
+        var y_noise_direction = 0.1
+        const noise_rate = 0.015
+        const noise_boundary = 0.20
+
+        setInterval(function () {
+            y_noise += y_noise_direction
+            if (y_noise > noise_boundary) {
+                y_noise_direction = -noise_rate
+            } else if (y_noise < -noise_boundary) {
+                y_noise_direction = noise_rate
+            }
+        }, 1000 / 20);
+
+        var x_noise = 0
+        var x_noise_direction = 0.1
+
+        setInterval(function () {
+            x_noise += x_noise_direction
+            if (x_noise > noise_boundary) {
+                x_noise_direction = -noise_rate
+            } else if (x_noise < -noise_boundary) {
+                x_noise_direction = noise_rate
+            }
+        }, 1000 / 30);
+
+        var first_time = true;
+        setInterval(function () {
+            // normilise values to the encoding space
+            const norm_mouse_x = ((mouse_x / get_width()) * 4) - 2
+            const norm_mouse_y = ((mouse_y / get_height()) * 4) - 2
+            predict(norm_mouse_x + x_noise, norm_mouse_y + y_noise)
+            if (first_time && model){
+
+                document.getElementById("canvas").style.opacity = 100;
+                first_time = false
+            }
+            // console.log(norm_mouse_x, norm_mouse_y)
+        }, 1000 / 20);
+
+    </script>
+
+
+</body>
+
+
+</html>
