@@ -3,74 +3,19 @@
 <head>
     <title>Zack Akil | Personal Website</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="London based machine learning maker.">
+    <meta name="description" content="London based machine learning engineer & developer advocate.">
     <meta name="author" content="Zack Akil">
     <meta name="keywords"
-        content="zack akil data science machine learning ml maker hacker hardware engineer machine learning">
+        content="zack akil data science machine learning london ml maker hacker hardware engineer machine learning devloper advocate">
     <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"
-        integrity="sha256-ECB9bbROLGm8wOoEbHcHRxlHgzGqYpDtNTgDTyDz0wg=" crossorigin="anonymous" />
-    <!--<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">-->
-    <link href="https://fonts.googleapis.com/css2?family=Neucha&display=swap" rel="stylesheet">
 
-    <script src="https://use.fontawesome.com/690665f777.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200&display=swap" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
 
     <style>
-        body {
-             font-family: 'Neucha', cursive;
-            /*font-family: 'Kalam', cursive;*/
-            /*font-family: 'Nunito Sans', sans-serif;*/
-            text-align: center
-        }
-
-        #me-json {
-            /* margin-top: 3em; */
-            font-size: 2em;
-        }
-
-        #social-links a {
-
-        color: rgba(48, 58, 165, 0.85);
-        display: inline-block;
-        /* padding: 3px; */
-        margin: 5px;
-        font-size: 1.4em;
-        }
-
-        #social-links a:hover {
-            text-decoration: none;
-            color: rgba(48, 58, 165, 1);
-        }
-
-        #social-links a:visited {
-            text-decoration: none;
-        }
-
-
-        /* unvisited link */
-        #social-links a:link {
-            text-decoration: none;
-        }
-
-
-        /* selected link */
-        #social-links a:active {
-            text-decoration: none;
-        }
-
-
-        @media (min-width: 992px) {
-            .container-small {
-                width: 800px;
-            }
-        }
-
-        .container-small {
-            max-width: 100%;
-        }
-
         canvas {
             image-rendering: optimizeSpeed;
             image-rendering: -moz-crisp-edges;
@@ -84,45 +29,107 @@
             transition: opacity 3s;
             opacity: 0;
         }
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.4em;
+            padding: 1.6em;
+            margin: 0;
+            text-align: center;
+        }
+
+        div {
+            max-width: 1300px;
+            display: inline-block;
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            line-height: 1em;
+            margin: 0;
+        }
+
+        h3 {
+            margin-bottom: 0;
+        }
+
+        i,
+        span {
+            color: rgb(78, 89, 210);
+        }
+
+        ::selection {
+            background: rgb(78, 89, 210);
+            color: white;
+        }
+
+        ::-moz-selection {
+            background: rgb(78, 89, 210);
+            color: white;
+        }
+
+        li {
+            line-height: 1.7em;
+            list-style: square;
+        }
+
+        a:hover {
+            font-weight: bolder;
+        }
+
+        a,
+        a:visited,
+        a:hover,
+        a:active {
+            color: inherit;
+        }
     </style>
 </head>
 
 <body>
-    <div class="container  container-small">
 
-        <div id="me-json">
-            <div>
-                <a href="https://github.com/ZackAkil/webpage-autoencoder" target="_blank">
+
+    <div>
+        <div style="width: -webkit-fill-available;">
+            <a href="https://github.com/ZackAkil/webpage-autoencoder" target="_blank">
                 <canvas id="canvas" width="290" height="110"></canvas>
-                </a>
-                <!-- <h1 style="font-size: 2em">Zack Akil:</h1> -->
-            </div>
-            <!-- <hr> -->
-            <p style="font-size: 1.2em; color: #545454;" class="lead">machine learning maker</p>
-            <hr style="width:60%">
-            <div id="social-links">
+            </a>
+            <!-- <h1 style="font-size: 2em">Zack Akil:</h1> -->
+        </div>
+        <!-- <hr> -->
+        <p style="font-size: .7em;">
+        <h3>London based machine learning engineer & developer advocate.</h3>
+        <i>(I build things and talk about them for educational purposes)</i>
+        </p>
 
-                <a id="github" target="_blank" href="https://github.com/ZackAkil">
-                    <i class="fa fa-github" aria-hidden="true"></i>
-                </a>
-                <a id="twitter" target="_blank" href="https://twitter.com/ZackAkil">
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                </a>
-                <a id="linkedin" target="_blank" href="https://www.linkedin.com/in/zackakil/">
-                    <i class="fa fa-linkedin" aria-hidden="true"></i>
-                </a>
+        <div id="social-links">
+            <ul>
+                <li> <a target="_blank" href="https://www.linkedin.com/in/zackakil/">LinkedIn</a>
+                    <span>
+                        <- preferred way of contact</span>
+                </li>
+                <li> <a target="_blank" href="https://github.com/ZackAkil">GitHub</a>
+                    <span>
+                        <- see all the things I've built/I'm building</span>
+                </li>
+                <li> <a target="_blank" href="https://twitter.com/ZackAkil">Twitter</a>
+                    <span>
+                        <- occasionally see the notable things I've built or talked about</span>
+                </li>
+                <li> <a target="_blank" href="https://medium.com/@zackakil">Medium</a> <span>
+                        <- where I sometimes write about ML</span>
+                </li>
+                <li> <a target="_blank" href="https://www.meetup.com/central_london_data_science/">MeetUp</a>
+                    <span>
+                        <- events where I teach hands-on ML</span>
+                </li>
 
-                <a id="meetup" target="_blank" href="https://www.meetup.com/central_london_data_science/">
-                    <i class="fa fa-meetup" aria-hidden="true"></i>
-                </a>
+            </ul>
 
-                <a id="medium" target="_blank" href="https://medium.com/@zackakil">
-                    <i class="fa fa-medium" aria-hidden="true" style="font-size: .9em;"></i>
-                </a>
-
-            </div>
         </div>
     </div>
+
 
     <script>
         (function (i, s, o, g, r, a, m) {
@@ -155,7 +162,7 @@
         function predict(x, y) {
             // console.log()
             if (model)
-            draw(model.predict(tf.tensor2d([[x, y]])).dataSync())
+                draw(model.predict(tf.tensor2d([[x, y]])).dataSync())
         }
 
 
@@ -233,8 +240,8 @@
         });
 
         setInterval(function () {
-            mouse_x += (target_mouse_x-mouse_x)/7
-            mouse_y += (target_mouse_y-mouse_y)/7
+            mouse_x += (target_mouse_x - mouse_x) / 7
+            mouse_y += (target_mouse_y - mouse_y) / 7
 
         }, 1000 / 30);
 
@@ -271,7 +278,7 @@
             const norm_mouse_x = ((mouse_x / get_width()) * 4) - 2
             const norm_mouse_y = ((mouse_y / get_height()) * 4) - 2
             predict(norm_mouse_x + x_noise, norm_mouse_y + y_noise)
-            if (first_time && model){
+            if (first_time && model) {
 
                 document.getElementById("canvas").style.opacity = 100;
                 first_time = false
