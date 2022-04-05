@@ -48,15 +48,22 @@
 
         .skill {
             padding: 5px 10px;
-            /* background-color: blue; */
             border-radius: 5px;
             margin: 10px 0;
 
             animation-fill-mode: forwards;
             animation-name: fade;
             animation-duration: 1.7s;
+        }
 
-            
+        @keyframes fade {
+            from {
+                background-color: none;
+            }
+
+            to {
+                background-color: blue;
+            }
         }
 
         video {
@@ -132,20 +139,6 @@
             border-radius: 5px;
             cursor: pointer;
         }
-
-        #container {
-            position: relative;
-        }
-
-        @keyframes fade {
-            from {
-                background-color: none;
-            }
-
-            to {
-                background-color: blue;
-            }
-        }
     </style>
 </head>
 
@@ -155,40 +148,40 @@
             <source src="zack_reel.mp4" type="video/mp4">
         </video>
     </div>
-    <div id="container">
-        <div id="app">
-            <div id="head">
-                <a class="link" target="_blank" href="https://github.com/ZackAkil">Projects</a>
-                <a class="link" target="_blank"
-                    href="https://www.youtube.com/playlist?list=PLrwx50cXLR_Ve21U_zAH_IM9qtt6JU7yM">Talks</a>
-                <a class="link" target="_blank" href="https://www.linkedin.com/in/zackakil/">Contact</a>
-            </div>
-            <div id="main">
-                <h1>Zack Akil</h1>
-                <p id="brief">
-                    London based <span class="skill" style="animation-delay: .5s">machine learning engineer</span> and <span
-                        class="skill" style="animation-delay: 1s">educator</span> with a background in
-                    full stack <span class="skill" style="animation-delay: 1.5s">application development</span>, and a passion for building and
-                    showcasing unique <span class="skill" style="animation-delay: 2s">technical demos</span>.
-                </p>
-            </div>
-            <div id="social">
-                <a class="link" target="_blank" href="https://www.linkedin.com/in/zackakil/">
-                    <i class="fa fa-linkedin" aria-hidden="true"></i>
-                </a>
-                <a class="link" target="_blank" href="https://github.com/ZackAkil">
-                    <i class="fa fa-github" aria-hidden="true"></i>
-                </a>
-                <a class="link" target="_blank" href="https://twitter.com/ZackAkil">
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                </a>
-                <a class="link" target="_blank" href="https://www.meetup.com/central_london_data_science/">
-                    <i class="fa fa-meetup" aria-hidden="true"></i>
-                </a>
-                <a class="link" target="_blank" href="https://medium.com/@zackakil">
-                    <i class="fa fa-medium" aria-hidden="true" style="font-size: .9em;"></i>
-                </a>
-            </div>
+
+    <div id="app">
+        <div id="head">
+            <a class="link" target="_blank" href="https://github.com/ZackAkil">Projects</a>
+            <a class="link" target="_blank"
+                href="https://www.youtube.com/playlist?list=PLrwx50cXLR_Ve21U_zAH_IM9qtt6JU7yM">Talks</a>
+            <a class="link" target="_blank" href="https://www.linkedin.com/in/zackakil/">Contact</a>
+        </div>
+        <div id="main">
+            <h1>Zack Akil</h1>
+            <p id="brief">
+                London based <span class="skill" style="animation-delay: .5s">machine learning engineer</span> and <span
+                    class="skill" style="animation-delay: 1s">educator</span> with a background in
+                full stack <span class="skill" style="animation-delay: 1.5s">application development</span>, and a
+                passion for building and
+                showcasing unique <span class="skill" style="animation-delay: 2s">technical demos</span>.
+            </p>
+        </div>
+        <div id="social">
+            <a class="link" target="_blank" href="https://www.linkedin.com/in/zackakil/">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a class="link" target="_blank" href="https://github.com/ZackAkil">
+                <i class="fa fa-github" aria-hidden="true"></i>
+            </a>
+            <a class="link" target="_blank" href="https://twitter.com/ZackAkil">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a class="link" target="_blank" href="https://www.meetup.com/central_london_data_science/">
+                <i class="fa fa-meetup" aria-hidden="true"></i>
+            </a>
+            <a class="link" target="_blank" href="https://medium.com/@zackakil">
+                <i class="fa fa-medium" aria-hidden="true" style="font-size: .9em;"></i>
+            </a>
         </div>
     </div>
 </body>
